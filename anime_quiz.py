@@ -1,4 +1,3 @@
-import random
 from colorama import Fore, Style, init
 
 init(autoreset=True)
@@ -67,8 +66,36 @@ questions = [
     }
 ]
 
+#function to ask questions
+def ask_questions(question_obj):
+    print("\n" + question_obj["q"])
+    for key, val in question_obj["a"].items():
+        print(f" {Fore.WHITE}{key}. {val}")
+
+    #if true, it will output the answer, if you pick the wrong choice, you must pick again
+    while True:
+        choice = input(f"{Fore.WHITE}{Style.BRIGHT} Your answer (A/B/C/D): ").upper()
+        if choice in ["A", "B", "C", "D"]:
+            return choice
+        print(f"{Fore.RED} Invalid choice. Pick A, B, C, or D.")
+
+#retrieve the results  
+def get_result(answers):
+    return max(set(answers), key=answers.count)
+
+
 def main():
-    pass
+    print(f"{Fore.WHITE}{Style.BRIGHT} Welcome to the Anime Personality Quiz!")
+
+    answers = []
+    for question in questions:
+        answers.append(ask_questions(question))
+
+    result_key = get_result(answers)
+    character = characters[result_key]
+
+    print("\n" + f"{Fore.WHITE}{Style.BRIGHT} You are most like... ")
+    print(f"{Fore.YELLOW}{Style.BRIGHT}{character}\n")
 
 
 if __name__ == "__main__":
