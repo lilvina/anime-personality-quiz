@@ -25,7 +25,8 @@ Install dependencies:
 ```python anime_quiz.py``` or ```python3 anime_quiz.py```
 
 # Example Output
-```Welcome to the Anime Personality Quiz 🌙✨
+```
+Welcome to the Anime Personality Quiz 🌙✨
 
 You see danger ahead. What do you do?
 A. Charge in bravely to protect everyone
@@ -34,4 +35,5 @@ C. Stay calm and make a strategic plan
 D. Joke around but prepare to fight if needed
 
 You are most like…
-Satoru Gojo 😎🌙 – Chill, stylish, effortlessly OP.```
+Satoru Gojo 😎🌙 – Chill, stylish, effortlessly OP.
+```
